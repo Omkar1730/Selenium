@@ -11,7 +11,7 @@ public class OrderHistoryTest extends BaseTest {
 
 	@Test(dependsOnGroups = {"placeOrder"}, groups= {"Smoke"})
 	public void verifyProductInOrderHistory() {
-		HomePage homepage = login.loginTest("omkarp800@gmail.com", "Omkar@5137");
+		HomePage homepage = login.loginTest("omkar800@gmail.com", "Omkar@5137");
 		OrdersHistoryPage orderHistory= homepage.navigateToOrderDetails();
 		Boolean match = orderHistory.verifyProductInOrderHistory(productName);
 		Assert.assertTrue(match);
