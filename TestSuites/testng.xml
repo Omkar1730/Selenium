@@ -5,13 +5,13 @@
 <listeners>
 <listener class-name="testComponents.Listeners"></listener>
 </listeners>
-  <test thread-count="2" parallel="tests" name="End to End Test">
+  <test name="End to End Test">
     <classes>
       <class name="EcomTest.EndToEndTest"/>
       <class name="EcomTest.OrderHistoryTest"/>
     </classes>
   </test>
-  <test thread-count="2" parallel="tests" name="Error Validations">
+  <test name="Error Validations">
     <classes>
       <class name="EcomTest.LoginPageTest"/>
     </classes>
