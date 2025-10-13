@@ -1,25 +1,15 @@
 package EcomTest;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import java.io.*;
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Properties;
-
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import pageObjects.LoginPage;
 
@@ -36,12 +26,14 @@ public class BaseTest {
 		FileInputStream fis = new FileInputStream(
 				System.getProperty("user.dir") + "\\src\\main\\java\\resources\\GlobalData.properties");
 		prop.load(fis);
-		String browserName = prop.getProperty("browser");
+		String browserName = System.getProperty("browser")!= null ? System.getProperty("browser") : prop.getProperty("browser");
 
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("Edge")) {
-			driver = new EdgeDriver();
+			WebDriverManager.edgedriver().setup();
+			EdgeOptions options = new EdgeOptions();
+			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("Firefox")) {
 			driver = new FirefoxDriver();
 		}

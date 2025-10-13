@@ -1,1 +1,6 @@
 /target/
+Reports/
+test-output/
+screenshots/
+*.png
+index.html
