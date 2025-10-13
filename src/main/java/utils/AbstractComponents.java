@@ -90,13 +90,5 @@ public class AbstractComponents {
 		orderHistory = new OrdersHistoryPage(driver);
 		return orderHistory;
 	}
-	
-	public String captureScreenshot(String testCaseName) throws IOException {
-		
-		TakesScreenshot ts = (TakesScreenshot)driver;
-		File srcfile= ts.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(srcfile, new File(System.getProperty("user.dir"+"//reports"+testCaseName+".png")));
-		return System.getProperty("user.dir"+"//reports"+testCaseName+".png");
-	}
-	
+
 }
