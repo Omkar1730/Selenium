@@ -1,6 +1,35 @@
 /target/
-Reports/
-test-output/
 screenshots/
 *.png
 index.html
+
+# === IDE specific ===
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# === Build artifacts ===
+target/
+build/
+
+# === Logs and reports ===
+*.log
+Reports/
+test-output/
+
+# === OS specific ===
+.DS_Store
+Thumbs.db
+
+# === Other temporary files ===
+*.tmp
+*.swp
+*.bak
