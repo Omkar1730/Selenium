@@ -8,7 +8,7 @@ import pageObjects.CartPage;
 import pageObjects.CheckoutPage;
 import pageObjects.ConfirmationPage;
 import pageObjects.HomePage;
-import utils.JsonDataProvider;
+import testComponents.JsonDataProvider;
 import utils.LoginData;
 
 public class EndToEndTest extends BaseTest {
