@@ -1,4 +1,4 @@
-package utils;
+package testComponents;
 
 import java.io.File;
 import java.util.List;
@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import utils.LoginData;
 
 public class JsonDataProvider {
 	@DataProvider(name = "loginData")
